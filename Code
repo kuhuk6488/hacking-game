@@ -1,0 +1,155 @@
+from uagame import Window
+from time import sleep 
+#create window
+
+Window = Window('HACKING', 600,500)
+Window.set_font_name('couriernew')
+Window.set_bg_color('black')
+Window.set_font_color('green')
+Window.set_font_size(18)
+
+#display header
+line_y=0
+string_height=Window.get_font_height()
+Window.draw_string('DEBUG MODE',0,line_y)
+Window.update()
+sleep(0.3)
+line_y=line_y+string_height
+
+Window.draw_string('1 ATTEMPT(S) LEFT',0,line_y)
+Window.update()
+sleep(0.3)
+line_y=line_y+string_height
+
+Window.draw_string('PROVIDE',0,line_y)
+Window.update()
+sleep(0.3)
+line_y=line_y+string_height
+Window.draw_string('',0,line_y)
+Window.update()
+sleep(0.3)
+line_y=line_y+string_height
+
+#Display password list
+Window.draw_string('PROVIDE', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('SETTING', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('CANTINA', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('CUTTING', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('HUNTERS', 0, line_y)
+line_y = line_y + string_height
+Window.update()
+sleep(0.3)
+Window.draw_string('HOT', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('COLD', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('TASTY', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('COCO', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('WHY', 0, line_y)
+line_y = line_y + string_height
+Window.update()
+sleep(0.3)
+Window.draw_string('FINDING', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('HAPP', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+Window.draw_string('', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+
+#prompt for guess
+guess= Window.input_string('ENTER PASSWORD >',0,line_y)
+
+#end game
+#  clear window
+Window.clear()
+#  diplay failure outcome 
+#    display guess
+#      compute x cordinate
+x_space= Window.get_width() - Window.get_string_width(guess)
+line_x=x_space // 2
+
+
+#      compute y cordinate
+outcome_height= 7*string_height
+y_space= Window.get_height() - outcome_height
+line_y = y_space // 2
+
+Window.draw_string(guess,line_x,line_y)
+Window.update()
+sleep(1)
+line_y=line_y+string_height
+#    diplay blank line
+Window.draw_string('', 0, line_y)
+Window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+#    display failure line2
+#    compute x cordinate 
+x_space=Window.get_width()-Window.get_string_width('LOGIN FAILURE-TERMINAL LOCKED')
+line_x=x_space // 2
+
+Window.draw_string('LOGIN FAILURE-TERMINAL LOCKED',line_x,line_y)
+Window.update()
+sleep(0.3)
+line_y=liney_y+string_height
+
+#    display blank line
+window.draw_string('', 0, line_y)
+window.update()
+sleep(0.3)
+line_y = line_y + string_height
+
+#    display failure line3 
+
+
+#    display blank line
+
+
+#  prompt for end
+x_space = Window.get_width() - Window.get_string_width('PRESS ENTER TO EXIT')
+line_x = x_space // 2
+Window.input_string('PRESS ENTER TO EXIT',line_x,line_y)
+
+
+#  close window
+Window.close()
